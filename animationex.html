@@ -1,0 +1,225 @@
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	
+body {
+    height: 100vh;
+    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+
+    margin: 0;
+    overflow: hidden;
+
+}
+
+.container {
+  height: 10rem;
+  width: 10rem;
+  position: relative;
+
+
+  transform-origin: center;
+
+  animation-name: containers;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  animation-delay: 3s;
+ }
+
+ .first-border,.second-border {
+  border-radius: 50%;
+  position: relative;
+  background: transparent;
+  border: 5px solid transparent;
+}
+  
+  /*Outer Border*/
+.first-border{
+    width: 100%;
+  	height: 100%;
+
+  	border-left-color:#a8ff04;
+  	border-right-color: skyblue;
+
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+
+  	animation: rotate-first-border infinite 1s linear;
+  }
+ 
+  
+/*Inner Border*/
+  
+  .second-border {
+  width: calc(100% - 10%);
+  height: calc(100% - 10%);
+
+  border-left-color: #f70d1a;
+  border-top-color:  #f70d1a;
+  transform: rotate(90deg);
+
+  animation: rotate-second-border infinite 1s linear;
+}
+
+
+
+
+
+ /*Line Styles*/
+
+.line {
+  content: "loading";
+  width: 50%;
+  height: 15%;
+  background: rgb(0, 243, 203);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation-name: line-Anim;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*Dot Styles*/
+
+.dot {
+  height: 10%;
+  width: 10%;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgb(198, 255, 221), rgb(251, 215, 134), rgb(247, 121, 125));
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: jump 0.5s infinite;
+}
+
+/*Half Circle Styles*/
+
+.half-circle {
+  width: 60%;
+  height: 30%;
+  text-align: center;
+  color: #fef200;
+  font-size: 20px;
+
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+  
+  
+/*Keyframes*/
+
+@keyframes rotate-first-border {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-second-border {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-1100deg);
+  }
+}
+
+@keyframes line-Anim {
+  0% {
+    left: 50%;
+    width: 0;
+    background-color: red;
+  }
+
+  25% {
+    left: 50%;
+    width: 40%;
+    background-color: yellow;
+
+  }
+  50% {
+    left: 50%;
+    width: 0;
+    background-color: violet;
+  }
+  75% {
+    left: 50%;
+    width: 60%;
+    background-color: limegreen;
+  }
+  100% {
+    left: 50%;
+    width: 0;
+    background-color: pink;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 40%;
+  }
+  50% {
+    top: 15%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+@keyframes containers{
+  0%{
+      transform: rotate(0deg);
+  }
+
+  25%{
+      transform: rotateY(180deg);
+  }
+
+  50%{
+    transform: rotateY(0deg);
+  }
+
+  75%{
+    transform: rotateX(180deg);
+  }
+
+  100%{
+    transform: rotateX(0deg);
+  }
+
+}
+
+</style>
+<body>
+ <div class="container loaded">
+  <div class="outer-border">
+      <div class="first-border">
+        <div class="second-border"></div>
+      </div>
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="half-circle">
+        Loading...
+      </div>
+        </div>
+       </div>
+     </div>
+</body>
+</html>       
